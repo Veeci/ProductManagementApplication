@@ -1,0 +1,2 @@
+-Thêm bảng thông tin tài khoản người dùng dựa trên bảng tải khoản
+-Thêm chức năng quản lý vận chuyển đơn hàng, nhúng api google map để theo dõi quá trình vận chuyển
