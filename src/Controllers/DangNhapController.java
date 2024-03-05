@@ -48,7 +48,7 @@ public class DangNhapController implements ActionListener
                     TaiKhoan authenticatedUser = taikhoan.Authenticate(username, password);
                     if (authenticatedUser != null) {
                         HomePageView home = new HomePageView();
-                        home.SetWelcome("Chào mừng: " + username);
+                        home.SetWelcome("Chào mừng: " + authenticatedUser.getHoTen() +"!");
                         home.setVisible(true);
                         view.dispose();
                     } else {

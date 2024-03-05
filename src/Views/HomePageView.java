@@ -46,7 +46,6 @@ public class HomePageView extends JFrame {
 	HomePageController ac;
 	
 	private Connection connection;
-	
 	private JMenuItem itemXuatTaiKhoan;
 	private JMenuItem itemXuatDanhMuc;
 	private JMenuItem itemXuatSanPham;
@@ -55,6 +54,7 @@ public class HomePageView extends JFrame {
 	private JMenuItem taikhoanMenuItem;
 	private JMenuItem item4_1;
 	private JMenuItem itemDangXuat;
+	private JMenuItem itemDiaChi;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -110,6 +110,7 @@ public class HomePageView extends JFrame {
             sanphamMenuItem.addActionListener(ac);
             taikhoanMenuItem.addActionListener(ac);
             item4_1.addActionListener(ac);
+            itemDiaChi.addActionListener(ac);
     		itemDangXuat.addActionListener(ac);
             
         } catch (Exception e) {
@@ -120,40 +121,7 @@ public class HomePageView extends JFrame {
 	    this.setVisible(true);  
 	}
 
-	public void Menu() {
-		// -----------Menu 1----------------
-		JMenu menu1 = new JMenu("File");
-		// item1_1
-		JMenuItem item1_1 = new JMenuItem("New", KeyEvent.VK_N);// Gạch chân dưới menu có thể dùng phím tắt
-		item1_1.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_DOWN_MASK));// Phím tắ Ctrl+n để mở menu New
-																									 
-		// Thêm icon cho item1_1
-		URL urlNew = HomePageView.class.getResource("new.png");
-		Image imgNew = Toolkit.getDefaultToolkit().createImage(urlNew);
-		item1_1.setIcon(new ImageIcon(imgNew));
-
-		// item1_2
-		JMenuItem item1_2 = new JMenuItem("Open file", KeyEvent.VK_O);
-		item1_2.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, InputEvent.CTRL_DOWN_MASK));
-		// Thêm icon cho item1_2
-		URL urlOpen = HomePageView.class.getResource("openFile.png");
-		Image imgOpen = Toolkit.getDefaultToolkit().createImage(urlOpen);
-		item1_2.setIcon(new ImageIcon(imgOpen));
-
-		// item1_3
-		JMenuItem item1_3 = new JMenuItem("Recent file", KeyEvent.VK_R);
-		item1_3.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_R, InputEvent.CTRL_DOWN_MASK));
-		// Thêm icon cho item1_3
-		URL urlRecent = HomePageView.class.getResource("recentFile.png");
-		Image imgRecent = Toolkit.getDefaultToolkit().createImage(urlRecent);
-		item1_3.setIcon(new ImageIcon(imgRecent));
-
-		menu1.add(item1_1);
-		menu1.add(item1_2);
-		menu1.addSeparator();
-		menu1.add(item1_3);
-		// ---------------------------------------
-
+	public void Menu() {																									
 		// ----------------Menu 3-----------------
 		
 		JMenu quanliMenu = new JMenu("Quản lý");
@@ -170,7 +138,6 @@ public class HomePageView extends JFrame {
 		taikhoanMenuItem = new JMenuItem("Quản lý tài khoản");
 		taikhoanMenuItem.addActionListener(ac);
 		quanliMenu.add(taikhoanMenuItem);
-		menuBar.add(menu1);
 		// ---------------------------------------
 		
 		// ----------------Menu 4-----------------
@@ -205,6 +172,12 @@ public class HomePageView extends JFrame {
 		// ---------------------------------------
 		
 		setJMenuBar(menuBar);
+		
+		JMenu menu7 = new JMenu("Địa chỉ");
+		menuBar.add(menu7);
+		
+		itemDiaChi = new JMenuItem("Địa chỉ kho hàng");
+		menu7.add(itemDiaChi);
 	}
 
 	public void Interface() {
@@ -217,7 +190,7 @@ public class HomePageView extends JFrame {
 		lblWelcome = new JLabel("");
 		lblWelcome.setForeground(Color.WHITE);
 		lblWelcome.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblWelcome.setBounds(793, 0, 156, 30);
+		lblWelcome.setBounds(747, 0, 202, 30);
 		mainPanel.add(lblWelcome);
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\doanv\\Downloads\\BTL3\\ImagesResource\\ImagesResource\\background.jpg"));

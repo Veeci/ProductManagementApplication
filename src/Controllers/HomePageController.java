@@ -24,6 +24,7 @@ import Views.QuanlyDanhMucView;
 import Views.QuanlySanPhamView;
 import Views.QuanlyTaiKhoanView;
 import Views.DangNhap.FirstView;
+import map.ViewMap;
 
 public class HomePageController implements ActionListener {
     private HomePageView view;
@@ -106,6 +107,11 @@ public class HomePageController implements ActionListener {
                 } catch (SQLException ex) {
                     ex.printStackTrace();
                 }
+                break;
+            case "Địa chỉ kho hàng":
+                ViewMap viewmap = new ViewMap();
+                viewmap.setVisible(true);
+                view.dispose();
                 break;
         }
     }
